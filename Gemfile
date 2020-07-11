@@ -49,4 +49,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'rails-cont
+  gem 'rails-controller-testing'
+  gem 'letter_opener'
+end
+
+group :development do
+  # Access an IRB console on exception pages or
