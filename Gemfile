@@ -63,3 +63,9 @@ group :development do
 end
 
 group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'launchy'
+end
+
+# Windows does not include zoneinfo fi
