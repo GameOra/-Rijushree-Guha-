@@ -1,0 +1,2 @@
+jQuery ->
+  $("a[rel~=p
