@@ -1,0 +1,1 @@
+class Admin::ItemsController < Admin::Base
