@@ -5,4 +5,6 @@ class Admin::ItemsController < Admin::BaseController
   def index
     @index = 0
     @transactions = Transaction.all
-    @item
+    @items = Item.paginate(page: params[:page]).distinct
+  end
+end
