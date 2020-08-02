@@ -3,4 +3,15 @@ class Admin::UsersController < Admin::BaseController
 
   authorize_resource
 
-  de
+  def index
+    @users = User.all
+  end
+
+  def show
+  end
+
+  def new
+    @user = User.new
+  end
+
+  d
