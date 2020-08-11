@@ -14,4 +14,6 @@ class Admin::UsersController < Admin::BaseController
     @user = User.new
   end
 
-  d
+  def create
+    @user = User.create(user_params)
+    @user.set_role(params[:role]) if p
