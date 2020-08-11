@@ -24,4 +24,9 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def update
-    @user.update(u
+    @user.update(user_params)
+    @user.set_role(params[:role])
+    respond_with(:admin, @user)
+  end
+
+  def destroy
