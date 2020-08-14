@@ -30,3 +30,10 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def destroy
+    respond_with(:admin, @user.destroy)
+  end
+
+  private
+
+  def user_params
+    params.require(
