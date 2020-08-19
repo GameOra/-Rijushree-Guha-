@@ -19,3 +19,4 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     current_user.has_role?(:admin) ? admin_items_path : items_path
   end
+end
