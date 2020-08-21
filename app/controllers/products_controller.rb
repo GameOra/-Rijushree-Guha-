@@ -6,4 +6,13 @@ class ProductsController < ApplicationController
   def index
     @products = Product.page(params[:page])
     @index = 0
-    respond_with(@product
+    respond_with(@products)
+  end
+
+  def show
+    respond_with(@product)
+  end
+
+  def new
+    @product = Product.new
+    res
