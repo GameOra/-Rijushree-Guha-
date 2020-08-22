@@ -15,4 +15,8 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    res
+    respond_with(@product)
+  end
+
+  def create
+    @product = Product.create(product_para
