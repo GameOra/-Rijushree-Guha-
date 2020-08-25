@@ -19,4 +19,12 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.create(product_para
+    @product = Product.create(product_params)
+    respond_with(@product)
+  end
+
+  def edit
+  end
+
+  def update
+    @product.update(produ
