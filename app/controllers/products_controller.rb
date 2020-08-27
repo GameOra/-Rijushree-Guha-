@@ -27,4 +27,12 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product.update(produ
+    @product.update(product_params)
+    respond_with @product
+  end
+
+  def destroy
+    respond_with(@product.destroy)
+  end
+
+  p
