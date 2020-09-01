@@ -35,4 +35,7 @@ class ProductsController < ApplicationController
     respond_with(@product.destroy)
   end
 
-  p
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :wieght, :hangar_id)
