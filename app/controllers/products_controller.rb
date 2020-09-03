@@ -39,3 +39,9 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :wieght, :hangar_id)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
+end
