@@ -3,4 +3,7 @@ class Ability
 
   attr_reader :user
 
-  
+  def initialize(user)
+    @user = user
+    if user
+      if Role.pluck(:name).include?(user.roles.first.try(:name)
