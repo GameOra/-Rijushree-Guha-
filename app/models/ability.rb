@@ -10,4 +10,13 @@ class Ability
         send("#{user.roles.first.name}_abilities")
       else
         guest_abilities
-      e
+      end
+    end
+  end
+
+  def admin_abilities
+    can :manage, :all
+  end
+
+  def seller_abilities
+    ca
