@@ -19,4 +19,7 @@ class Ability
   end
 
   def seller_abilities
-    ca
+    can :create, Transaction
+    can :read, [Item, Product]
+    can :subtract, Item
+    can :deduct
