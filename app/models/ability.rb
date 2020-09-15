@@ -22,4 +22,9 @@ class Ability
     can :create, Transaction
     can :read, [Item, Product]
     can :subtract, Item
-    can :deduct
+    can :deduct, Item
+  end
+
+  def contractor_abilities
+    can :create, [Transaction, Item]
+    can 
