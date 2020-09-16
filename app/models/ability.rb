@@ -27,4 +27,9 @@ class Ability
 
   def contractor_abilities
     can :create, [Transaction, Item]
-    can 
+    can :read, [Item, Product]
+  end
+
+  def guest_abilities
+    can :read, Product
+  end
