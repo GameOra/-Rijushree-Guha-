@@ -33,3 +33,4 @@ class Ability
   def guest_abilities
     can :read, Product
   end
+end
