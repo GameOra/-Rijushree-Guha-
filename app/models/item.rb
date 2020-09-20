@@ -17,4 +17,10 @@ class Item < ApplicationRecord
   end
 
   def self.summ(collection)
-   
+    collection
+  end
+
+  private
+
+  def calculate_total_wieght
+    self.total_wieght = quantity * product
