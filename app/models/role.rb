@@ -12,4 +12,6 @@ class Role < ApplicationRecord
   scopify
 
   def self.show
-    all.to_a.delete_if { |el
+    all.to_a.delete_if { |el|  el.name == 'admin' }
+  end
+end
