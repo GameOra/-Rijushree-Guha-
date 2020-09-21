@@ -7,3 +7,9 @@ class Role < ApplicationRecord
 
   validates :resource_type,
             :inclusion => { :in => Rolify.resource_types },
+            :allow_nil => true
+
+  scopify
+
+  def self.show
+    all.to_a.delete_if { |el
