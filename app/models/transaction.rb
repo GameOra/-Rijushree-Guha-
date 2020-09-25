@@ -3,4 +3,5 @@ class Transaction < ApplicationRecord
   belongs_to :product
 
   validates :transaction_date, :quantity, presence: true
-  validates_numericality_
+  validates_numericality_of :quantity
+end
