@@ -7,4 +7,7 @@ class User < ApplicationRecord
 
   has_many :transactions
 
-  validates 
+  validates :email, :password, :name, presence: true
+
+  def set_role(role)
+    role = Role.find
