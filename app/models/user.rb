@@ -18,4 +18,7 @@ class User < ApplicationRecord
   private
 
   def remove_old_role(role)
-    old_role = self.roles.to_a.delet
+    old_role = self.roles.to_a.delete_if { |el|  el.name == role }.first.try(:name)
+    self.remove_role(old_role) if old_role
+  end
+end
