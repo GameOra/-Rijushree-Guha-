@@ -7,4 +7,8 @@ p Здравствуйте, "Администратор"
         th Дата
         th Организация
         th Количество (шт.)
-        th Наименование тов
+        th Наименование товара
+    tbody
+      - @transactions.each do |transaction|
+        tr
+          td= transaction.trans
