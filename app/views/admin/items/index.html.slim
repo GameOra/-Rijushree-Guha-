@@ -31,4 +31,7 @@ p Здравствуйте, "Администратор"
       = render @items, index: @index
       tr
         td { colspan = '3' } Итого:
-        td #{@i
+        td #{@items.sum(:quantity)} ящиков
+  p Общая масса грузов:
+  - Hangar.all.map do |hangar|
+    p= "Ангар
