@@ -26,4 +26,9 @@ p Здравствуйте, "Администратор"
         th Вес
         th Остаток на складе (ящ)
         th Остаток не складе (кг)
-        th 
+        th Ангар
+    tbody
+      = render @items, index: @index
+      tr
+        td { colspan = '3' } Итого:
+        td #{@i
