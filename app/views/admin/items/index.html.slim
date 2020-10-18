@@ -34,4 +34,6 @@ p Здравствуйте, "Администратор"
         td #{@items.sum(:quantity)} ящиков
   p Общая масса грузов:
   - Hangar.all.map do |hangar|
-    p= "Ангар
+    p= "Ангар №#{hangar.number}: #{hangar.sum_wieght}"
+  end
+  p= link_to 'Добавить товар на ск
