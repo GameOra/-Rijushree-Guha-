@@ -14,4 +14,7 @@
     = f.email_field :email, autofocus: true, class: 'form-control'
   .field
     = f.label :password
- 
+    - if @minimum_password_length
+      em
+        | (#{@minimum_password_length} characters minimum)
+    br/
