@@ -6,4 +6,9 @@
     = f.text_field :name, class: 'form-control'
   .field
     = f.label :role, 'Роль'
-    = select_tag(:role, options_from_collection_for_select(Role.all, :id, 
+    = select_tag(:role, options_from_collection_for_select(Role.all, :id, :name,
+      prompt: 'Выберите роль'), class: 'form-control')
+  .field
+    = f.label :email
+    br/
+    
