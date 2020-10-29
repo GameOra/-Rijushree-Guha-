@@ -22,4 +22,6 @@
   .field
     = f.label :password_confirmation
     br/
-    = f.password_field :password_confirmation, autocomplete: "off", class: 'fo
+    = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
+  .actions
+    = f.submit "Сохранить", class: 'btn btn-primary'
