@@ -1,2 +1,4 @@
 tr
-  td= link_to user.
+  td= link_to user.name, admin_user_path(user)
+  td= user.email
+  td= user.roles.first.name
