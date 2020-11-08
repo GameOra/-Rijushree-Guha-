@@ -3,3 +3,5 @@ h2 Resend confirmation instructions
   = devise_error_messages!
   .field
     = f.label :email
+    br/
+    = f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation?
