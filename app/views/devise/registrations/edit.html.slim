@@ -8,4 +8,5 @@ h2
     = f.text_field :name, class: 'form-control'
   .field
     = f.label :role, 'Роль'
- 
+    = select_tag(:role, options_from_collection_for_select(Role.show, :id, :name,
+  
