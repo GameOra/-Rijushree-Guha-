@@ -14,4 +14,6 @@ h2
     = f.label :email
     br/
     = f.email_field :email, autofocus: true, class: 'form-control'
-  - if devise_mapping.confirmable? && resource.pending_
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    div
+      | Currently waiting confirmation for: #{resource.unconfirmed_email}
