@@ -13,4 +13,5 @@ h2
   .field
     = f.label :email
     br/
-    = f.email_fie
+    = f.email_field :email, autofocus: true, class: 'form-control'
+  - if devise_mapping.confirmable? && resource.pending_
