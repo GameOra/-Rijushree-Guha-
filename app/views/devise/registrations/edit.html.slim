@@ -22,4 +22,8 @@ h2
     i (leave blank if you don't want to change it)
     br/
     = f.password_field :password, autocomplete: "off", class: 'form-control'
-    - if @m
+    - if @minimum_password_length
+      br/
+      em
+        = @minimum_password_length
+        | characters minim
