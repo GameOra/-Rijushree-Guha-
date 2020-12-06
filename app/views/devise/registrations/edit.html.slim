@@ -37,4 +37,7 @@ h2
     br/
     = f.password_field :current_password, autocomplete: "off", class: 'form-control'
   .actions
-    = f.submit "Update", class: 'btn 
+    = f.submit "Update", class: 'btn btn-primary'
+h3 Cancel my account
+p
+  | Unhappy? #{button_to "Cancel my account", registration_path(resourc
