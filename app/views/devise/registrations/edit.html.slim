@@ -33,4 +33,6 @@ h2
     = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
   .field
     = f.label :current_password
-    i (we need your current 
+    i (we need your current password to confirm your changes)
+    br/
+    = f.password_field :current_password,
