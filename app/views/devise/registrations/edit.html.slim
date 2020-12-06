@@ -35,4 +35,6 @@ h2
     = f.label :current_password
     i (we need your current password to confirm your changes)
     br/
-    = f.password_field :current_password,
+    = f.password_field :current_password, autocomplete: "off", class: 'form-control'
+  .actions
+    = f.submit "Update", class: 'btn 
