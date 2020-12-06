@@ -30,4 +30,7 @@ h2
   .field
     = f.label :password_confirmation
     br/
-    = f.password_field :password_confirmati
+    = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
+  .field
+    = f.label :current_password
+    i (we need your current 
