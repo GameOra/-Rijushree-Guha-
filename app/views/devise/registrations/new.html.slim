@@ -1,3 +1,8 @@
 h2 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_
+  = devise_error_messages!
+  .field
+    = f.label :name
+    br/
+    = f.text_field :name, class: 'form-control'
+  .fie
