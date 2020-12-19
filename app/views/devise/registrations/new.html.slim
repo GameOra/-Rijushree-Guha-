@@ -5,4 +5,6 @@ h2 Sign up
     = f.label :name
     br/
     = f.text_field :name, class: 'form-control'
-  .fie
+  .field
+    = f.label :role, 'Роль'
+    = select_tag(:role, options_from_collection_for_select(Ro
