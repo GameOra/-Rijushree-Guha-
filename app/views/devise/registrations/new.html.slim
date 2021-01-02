@@ -19,3 +19,6 @@ h2 Sign up
       em
         | (#{@minimum_password_length} characters minimum)
     br/
+    = f.password_field :password, autocomplete: "off", class: 'form-control'
+  .field
+    = f.label :pas
