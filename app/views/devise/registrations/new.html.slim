@@ -23,4 +23,6 @@ h2 Sign up
   .field
     = f.label :password_confirmation
     br/
-    = f.password_field :password_confirmation, autocomplete:
+    = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
+  .actions
+    = f.submit "Sign up", class: 'btn btn-primary'
