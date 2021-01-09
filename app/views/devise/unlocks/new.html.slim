@@ -4,4 +4,7 @@ h2 Resend unlock instructions
   .field
     = f.label :email
     br/
-    = f.email_field
+    = f.email_field :email, autofocus: true
+  .actions
+    = f.submit "Resend unlock instructions"
+= render "devise/shared/l
