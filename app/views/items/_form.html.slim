@@ -5,4 +5,7 @@
     = f.collection_select(:product_id, Product.all, :id, :name,
                           { prompt: 'Выберите товар' }, { class: 'form-control' })
   .form-group
-    = f.label :quantity,  'К
+    = f.label :quantity,  'Количество'
+    = f.number_field :quantity, class: 'form-control'
+  .form-group
+    = f.submit 'Сохранить', cla
