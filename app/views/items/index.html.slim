@@ -10,4 +10,4 @@ table.table.table-bordered.table-hover
   tbody
     = render @items, index: @index
 - if can?(:create, Item)
-  p
+  p= link_to 'Добавить товар на склад', new_item_path, class: 'btn btn-primary'
