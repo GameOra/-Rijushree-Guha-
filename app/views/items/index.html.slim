@@ -6,4 +6,8 @@ table.table.table-bordered.table-hover
       th Вес
       th Остаток на складе (уп)
       th Остаток не складе (кг)
- 
+      th Ангар
+  tbody
+    = render @items, index: @index
+- if can?(:create, Item)
+  p
