@@ -3,4 +3,6 @@
   p Вес: #{@product.wieght}
   p Остаток на складе (шт): #{@item.quantity}
   p Остаток на складе (кг): #{@item.total_wieght}
-  p Анг
+  p Ангар: #{@product.hangar.number}
+- if can?(:update, Item)
+  = link_to 'Изменить', edit_item_path(@item)
