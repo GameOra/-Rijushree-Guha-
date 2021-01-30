@@ -5,4 +5,7 @@
   p Остаток на складе (кг): #{@item.total_wieght}
   p Ангар: #{@product.hangar.number}
 - if can?(:update, Item)
-  = link_to 'Изменить', edit_item_path(@item)
+  = link_to 'Изменить', edit_item_path(@item), class: 'btn btn-primary'
+  '
+- if can?(:destroy, Item)
+  = link_to 'Удалить', @item, method:
