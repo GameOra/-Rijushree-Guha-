@@ -11,4 +11,4 @@
   = link_to 'Удалить', @item, method: :delete, class: 'btn btn-primary'
   '
 - if can?(:deduct, Item)
-  = link_to 'Забрать товар со склада', sub
+  = link_to 'Забрать товар со склада', subtract_item_path(@item), class: 'btn btn-primary'
