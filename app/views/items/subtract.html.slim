@@ -2,4 +2,6 @@
   = render 'common/errors', resource: @item
   .form-group
     = f.label :name, 'Товар'
-    = f.collection_select(:product_id, 
+    = f.collection_select(:product_id, Product.all, :id, :name,
+                          { prompt: 'Выберите товар' }, { class: 'form-control' })
+ 
