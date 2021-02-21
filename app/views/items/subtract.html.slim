@@ -7,4 +7,5 @@
   .form-group
     = f.label :quantity,  'Количество'
     = f.number_field :quantity, class: 'form-control'
-  .form
+  .form-group
+    = f.submit 'Сохранить', class: 'btn btn-primary'
