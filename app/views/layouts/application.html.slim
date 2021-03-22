@@ -27,4 +27,6 @@ html lang="en"
             span.icon-bar
           a.navbar-brand href="#"Stock
           .navbar-collapse.collapse.navbar-responsive-collapse
-            
+            ul.nav.navbar-nav
+              - if user_signed_in?
+                li= link_to 'Номенклатура товаров', products_pat
