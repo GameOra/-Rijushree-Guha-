@@ -29,4 +29,6 @@ html lang="en"
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
               - if user_signed_in?
-                li= link_to 'Номенклатура товаров', products_pat
+                li= link_to 'Номенклатура товаров', products_path(my_posts: '1')
+                - if can?(:read, Item)
+                  li= link_to 'Склад', 
