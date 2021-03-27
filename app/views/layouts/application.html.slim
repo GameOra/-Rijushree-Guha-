@@ -31,4 +31,6 @@ html lang="en"
               - if user_signed_in?
                 li= link_to 'Номенклатура товаров', products_path(my_posts: '1')
                 - if can?(:read, Item)
-                  li= link_to 'Склад', 
+                  li= link_to 'Склад',  items_path
+                - if can?(:manage, User)
+                  li= link_
