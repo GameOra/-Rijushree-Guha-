@@ -33,4 +33,5 @@ html lang="en"
                 - if can?(:read, Item)
                   li= link_to 'Склад',  items_path
                 - if can?(:manage, User)
-                  li= link_
+                  li= link_to 'Управление пользователями', admin_users_path
+                li= link_to 'Выйти', destroy_u
