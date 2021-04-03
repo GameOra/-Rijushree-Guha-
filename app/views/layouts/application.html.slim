@@ -36,4 +36,7 @@ html lang="en"
                   li= link_to 'Управление пользователями', admin_users_path
                 li= link_to 'Выйти', destroy_user_session_path, method: :delete
                 li= link_to current_user.email, '#'
-        
+              - else
+                li= link_to 'Войти', new_user_session_path
+
+    .co
