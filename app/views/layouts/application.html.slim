@@ -39,4 +39,9 @@ html lang="en"
               - else
                 li= link_to 'Войти', new_user_session_path
 
-    .co
+    .container
+      .row
+        .col-lg-9
+          = bootstrap_flash
+          = yield
+        - if can?(:create, 
