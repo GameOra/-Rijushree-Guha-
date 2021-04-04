@@ -52,4 +52,5 @@ html lang="en"
                 - if can?(:create, Item)
                   li= link_to 'Добвавить товар на склад', new_item_path
                 - if can?(:create, Product)
-       
+                  li= link_to 'Добавить номенклатуру', new_product_path
+          
