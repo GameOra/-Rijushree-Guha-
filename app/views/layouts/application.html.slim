@@ -50,4 +50,6 @@ html lang="en"
               ul.nav.nav-list
                 li.nav-header Sidebar
                 - if can?(:create, Item)
-                  li= link
+                  li= link_to 'Добвавить товар на склад', new_item_path
+                - if can?(:create, Product)
+       
