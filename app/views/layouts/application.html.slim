@@ -44,4 +44,7 @@ html lang="en"
         .col-lg-9
           = bootstrap_flash
           = yield
-        - if can?(:create, 
+        - if can?(:create, Item) || can?(:create, Product)
+          .col-lg-3
+            .well.sidebar-nav
+              ul.nav.na
