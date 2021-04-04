@@ -47,4 +47,7 @@ html lang="en"
         - if can?(:create, Item) || can?(:create, Product)
           .col-lg-3
             .well.sidebar-nav
-              ul.nav.na
+              ul.nav.nav-list
+                li.nav-header Sidebar
+                - if can?(:create, Item)
+                  li= link
