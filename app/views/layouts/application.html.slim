@@ -53,4 +53,7 @@ html lang="en"
                   li= link_to 'Добвавить товар на склад', new_item_path
                 - if can?(:create, Product)
                   li= link_to 'Добавить номенклатуру', new_product_path
-          
+                - if current_user.has_role?(:admin)
+                  li= link_to 'Админ панель', admin_items_path
+
+      
