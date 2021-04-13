@@ -2,4 +2,7 @@
   = render 'common/errors', resource: product
   .form-group
     = f.label :name, 'Наименование'
-    = f.text_field :name, class: 'form-c
+    = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :wieght,  'Вес'
+    = f.number_field :wieght, class: '
