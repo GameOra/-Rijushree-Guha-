@@ -5,4 +5,7 @@
     = f.text_field :name, class: 'form-control'
   .form-group
     = f.label :wieght,  'Вес'
-    = f.number_field :wieght, class: '
+    = f.number_field :wieght, class: 'form-control'
+  .form-group
+    = f.label :hangar, 'Ангар'
+    = f.collection_select(:hangar_id, H
