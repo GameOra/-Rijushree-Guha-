@@ -8,4 +8,6 @@
     = f.number_field :wieght, class: 'form-control'
   .form-group
     = f.label :hangar, 'Ангар'
-    = f.collection_select(:hangar_id, H
+    = f.collection_select(:hangar_id, Hangar.all, :id, :number,
+                          { prompt: 'Выберите ангар' }, { class: 'form-control' })
+  .for
