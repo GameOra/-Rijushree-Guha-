@@ -1,2 +1,5 @@
 tr
-  td= set_index(pro
+  td= set_index(product)
+  td= link_to product.name, product_path(product)
+  td= product.wieght
+  td= product.hangar.number
