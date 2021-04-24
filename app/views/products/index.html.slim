@@ -6,4 +6,8 @@
         th №
         th Наименование
         th Вес
-     
+        th Ангар
+    tbody
+      = render @products, index: @index
+  - if can?(:create, Product)
+    p = link_
