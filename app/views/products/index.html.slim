@@ -10,4 +10,4 @@
     tbody
       = render @products, index: @index
   - if can?(:create, Product)
-    p = link_
+    p = link_to 'Добавить номенклатуру', new_product_path, class: 'btn btn-primary'
