@@ -2,4 +2,7 @@
   p Наименование: #{@product.name}
   p Вес: #{@product.wieght}
   p Ангар: #{@product.hangar.number}
-- i
+- if can?(:update, Product)
+  = link_to 'Изменить', edit_product_path(@product), class: 'btn btn-primary'
+  '
+- if can?
