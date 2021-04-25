@@ -5,4 +5,5 @@
 - if can?(:update, Product)
   = link_to 'Изменить', edit_product_path(@product), class: 'btn btn-primary'
   '
-- if can?
+- if can?(:destroy, Product)
+  = link_to 'Удалить', @product, method: :delete, class: 'btn btn-primary'
