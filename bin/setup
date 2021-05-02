@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
 require 'pathname'
 require 'fileutils'
-include F
+include FileUtils
+
+# path to your application root.
+APP_ROOT = Pathname.new File.expand_path('../../', __
