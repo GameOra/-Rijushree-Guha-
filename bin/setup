@@ -11,4 +11,5 @@ def system!(*args)
 end
 
 chdir APP_ROOT do
-  # Thi
+  # This script is a starting point to setup your application.
+  # Add necessary setup steps to thi
