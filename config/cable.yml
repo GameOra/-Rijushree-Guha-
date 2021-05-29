@@ -1,1 +1,9 @@
-developme
+development:
+  adapter: async
+
+test:
+  adapter: async
+
+production:
+  adapter: redis
+  url: redis://
