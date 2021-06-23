@@ -57,4 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database:
+  database: stock_test
+
+# As with config/secrets.yml, you never want to store sensitive information,
+# like your database passw
