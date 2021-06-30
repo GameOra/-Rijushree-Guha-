@@ -82,4 +82,4 @@ production:
   <<: *default
   database: stock_production
   username: stock
-  password: <%= ENV['STOCK
+  password: <%= ENV['STOCK_DATABASE_PASSWORD'] %>
