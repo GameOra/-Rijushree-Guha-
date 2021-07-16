@@ -46,4 +46,6 @@ Rails.application.configure do
   config.assets.quiet = true
 
   # Raises error for missing translations
-  # config.action_view
+  # config.action_view.raise_on_missing_translations = true
+
+  # Use an evented file watcher to asynchronously detect changes in source code
