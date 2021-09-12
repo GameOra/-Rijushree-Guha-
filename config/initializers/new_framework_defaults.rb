@@ -4,4 +4,6 @@
 #
 # Read the Guide for Upgrading Ruby on Rails for more info on each option.
 
-Rails.applicat
+Rails.application.config.action_controller.raise_on_unfiltered_parameters = true
+
+# Enable per-form CSRF tokens. Pre
