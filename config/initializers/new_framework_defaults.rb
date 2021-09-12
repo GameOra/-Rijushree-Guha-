@@ -6,4 +6,5 @@
 
 Rails.application.config.action_controller.raise_on_unfiltered_parameters = true
 
-# Enable per-form CSRF tokens. Pre
+# Enable per-form CSRF tokens. Previous versions had false.
+Rails.application.config.action_controller.per_form_csrf
