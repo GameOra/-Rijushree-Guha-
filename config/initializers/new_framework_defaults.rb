@@ -10,4 +10,6 @@ Rails.application.config.action_controller.raise_on_unfiltered_parameters = true
 Rails.application.config.action_controller.per_form_csrf_tokens = true
 
 # Enable origin-checking CSRF mitigation. Previous versions had false.
-Rails.application.con
+Rails.application.config.action_controller.forgery_protection_origin_check = true
+
+# Make Ruby 2.4 prese
