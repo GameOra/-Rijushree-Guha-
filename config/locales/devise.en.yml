@@ -3,4 +3,5 @@
 en:
   devise:
     confirmations:
-      confi
+      confirmed: "Your email address has been successfully confirmed."
+      send_instructions: "You will 
