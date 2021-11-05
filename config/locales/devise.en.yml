@@ -4,4 +4,5 @@ en:
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
-      send_instructions: "You will 
+      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
+      send_paran
