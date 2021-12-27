@@ -18,4 +18,6 @@ en:
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation 
+        subject: "Confirmation instructions"
+      reset_password_instructions:
+        subject: "Reset password 
