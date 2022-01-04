@@ -31,4 +31,4 @@ en:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
     passwords:
-      no_token: "You can't a
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a pa
