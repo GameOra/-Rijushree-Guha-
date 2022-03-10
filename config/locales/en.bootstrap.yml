@@ -6,4 +6,9 @@ en:
     application:
       root: "Index"
     pages:
-      p
+      pages: "Pages"
+  helpers:
+    actions: "Actions"
+    links:
+      back: "Back"
+      
