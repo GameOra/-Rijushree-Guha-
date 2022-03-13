@@ -11,4 +11,7 @@ en:
     actions: "Actions"
     links:
       back: "Back"
-      
+      cancel: "Cancel"
+      confirm: "Are you sure?"
+      destroy: "Delete"
+      new: "
