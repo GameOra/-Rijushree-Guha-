@@ -19,4 +19,5 @@ en:
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"
-      ne
+      new: "New %{model}"
+      delete: "Delete %{model}"
