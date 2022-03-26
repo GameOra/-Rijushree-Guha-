@@ -14,4 +14,6 @@
 #
 #     I18n.locale = :es
 #
-# This would use the i
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
