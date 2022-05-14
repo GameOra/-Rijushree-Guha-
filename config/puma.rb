@@ -36,3 +36,5 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # clustered mode by specifying a number of `workers`. After each worker
 # process is booted this block will be run, if you are using `preload_app!`
 # option you will want to use this block to reconnect to any threads
+# or connections that may have been created at application boot, Ruby
+# cannot share connections b
