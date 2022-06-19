@@ -5,4 +5,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.decimal :wieght
       t.references :hangar, foreign_key: true
 
-      t.times
+      t.timestamps
+    end
+  end
+end
