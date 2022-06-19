@@ -1,3 +1,6 @@
 class CreateItems < ActiveRecord::Migration[5.0]
   def change
-    create_tabl
+    create_table :items do |t|
+      t.references :product
+      t.decimal :total_wieght
+      t.integer
