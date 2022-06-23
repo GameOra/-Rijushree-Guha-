@@ -1,0 +1,1 @@
+class AddNameToUsers < ActiveRecord::Migration[5.0
