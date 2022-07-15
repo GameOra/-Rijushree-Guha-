@@ -13,4 +13,8 @@
 ActiveRecord::Schema.define(version: 20171009101455) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_exten
+  enable_extension "plpgsql"
+
+  create_table "hangars", force: :cascade do |t|
+    t.integer  "number"
+    t.d
