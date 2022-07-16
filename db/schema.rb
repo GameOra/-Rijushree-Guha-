@@ -21,4 +21,7 @@ ActiveRecord::Schema.define(version: 20171009101455) do
     t.datetime "updated_at", null: false
   end
 
-  create_
+  create_table "items", force: :cascade do |t|
+    t.integer  "product_id"
+    t.decimal  "total_wieght"
+    t.integer  "quan
