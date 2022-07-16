@@ -17,4 +17,8 @@ ActiveRecord::Schema.define(version: 20171009101455) do
 
   create_table "hangars", force: :cascade do |t|
     t.integer  "number"
-    t.d
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_
