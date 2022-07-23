@@ -34,4 +34,6 @@ ActiveRecord::Schema.define(version: 20171009101455) do
     t.string   "name"
     t.decimal  "wieght"
     t.integer  "hangar_id"
- 
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.
