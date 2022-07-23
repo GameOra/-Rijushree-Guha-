@@ -26,4 +26,8 @@ ActiveRecord::Schema.define(version: 20171009101455) do
     t.decimal  "total_wieght"
     t.integer  "quantity"
     t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: fa
+    t.datetime "updated_at",   null: false
+    t.index ["product_id"], name: "index_items_on_product_id", using: :btree
+  end
+
+  create_table "products", force: :cas
