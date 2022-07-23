@@ -36,4 +36,7 @@ ActiveRecord::Schema.define(version: 20171009101455) do
     t.integer  "hangar_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.
+    t.index ["hangar_id"], name: "index_products_on_hangar_id", using: :btree
+  end
+
+  create_table
