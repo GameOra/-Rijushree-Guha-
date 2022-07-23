@@ -30,4 +30,8 @@ ActiveRecord::Schema.define(version: 20171009101455) do
     t.index ["product_id"], name: "index_items_on_product_id", using: :btree
   end
 
-  create_table "products", force: :cas
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "wieght"
+    t.integer  "hangar_id"
+ 
