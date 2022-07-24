@@ -39,4 +39,8 @@ ActiveRecord::Schema.define(version: 20171009101455) do
     t.index ["hangar_id"], name: "index_products_on_hangar_id", using: :btree
   end
 
-  create_table
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "resource_type"
+    t.integer  "resource_id"
+    t.date
