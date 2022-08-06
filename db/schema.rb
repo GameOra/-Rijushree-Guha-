@@ -45,4 +45,5 @@ ActiveRecord::Schema.define(version: 20171009101455) do
     t.integer  "resource_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["name", "resource_type", "resource_id"], name
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
+    t.index ["name"], name: "index_r
