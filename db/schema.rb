@@ -43,4 +43,6 @@ ActiveRecord::Schema.define(version: 20171009101455) do
     t.string   "name"
     t.string   "resource_type"
     t.integer  "resource_id"
-    t.date
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["name", "resource_type", "resource_id"], name
