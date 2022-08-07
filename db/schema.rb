@@ -50,4 +50,7 @@ ActiveRecord::Schema.define(version: 20171009101455) do
   end
 
   create_table "transactions", force: :cascade do |t|
-  
+    t.datetime "transaction_date"
+    t.integer  "quantity"
+    t.integer  "user_id"
+    t.integer  
