@@ -53,4 +53,6 @@ ActiveRecord::Schema.define(version: 20171009101455) do
     t.datetime "transaction_date"
     t.integer  "quantity"
     t.integer  "user_id"
-    t.integer  
+    t.integer  "product_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: fals
