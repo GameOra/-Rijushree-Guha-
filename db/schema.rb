@@ -55,4 +55,6 @@ ActiveRecord::Schema.define(version: 20171009101455) do
     t.integer  "user_id"
     t.integer  "product_id"
     t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: fals
+    t.datetime "updated_at",       null: false
+    t.index ["product_id"], name: "index_transactions_on_product_id", using: :btree
+    t.index
