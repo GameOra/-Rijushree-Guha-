@@ -85,4 +85,6 @@ ActiveRecord::Schema.define(version: 20171009101455) do
   end
 
   add_foreign_key "products", "hangars"
-  add_foreign_k
+  add_foreign_key "transactions", "products"
+  add_foreign_key "transactions", "users"
+end
