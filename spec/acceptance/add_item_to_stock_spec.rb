@@ -64,3 +64,38 @@ feature 'Add item', %q{
 
   describe 'Contractor user adds item' do
     given(:contractor_user) { create(:user) }
+    before { contractor_user.add_role(:contractor) }
+
+    scenario 'it creates new item if item does not exists on the stock' do
+      sign_in(contractor_user)
+      click_new_item_link
+
+      select product.name, from: 'item_product_id'
+      fill_in 'item_quantity', with: '10'
+      click_on 'Сохранить'
+
+      expect(page).to have_content product.name
+      expect(page).to have_content '10'
+      expect(page).to have_content product.wieght * 10
+      expect(page).to have_content product.hangar.number
+    end
+  end
+
+  describe 'Seller user tries to add item' do
+    given(:seller_user) { create(:user) }
+    before { seller_user.add_role(:seller) }
+
+    scenario 'it does not create new item on the stock' do
+      sign_in(seller_user)
+      visit items_path
+      expect(page).to_not have_content 'Добавить товар на склад'
+    end
+  end
+
+  private
+
+  def click_new_item_link
+    visit items_path
+    click_on 'Добавить товар на склад'
+  end
+end
