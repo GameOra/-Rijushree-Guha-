@@ -5,4 +5,7 @@ feature 'Create product', %q{
   I need to be able to create products
 } do
 
-  given(:admin_user
+  given(:admin_user) { create(:user) }
+  given(:contractor_user) { create(:user) }
+  given(:seller_user) { create(:user) }
+  given
