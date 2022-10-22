@@ -8,4 +8,7 @@ feature 'Create product', %q{
   given(:admin_user) { create(:user) }
   given(:contractor_user) { create(:user) }
   given(:seller_user) { create(:user) }
-  given
+  given!(:hangar) { create(:hangar) }
+
+  describe 'Admin user' do
+    before { admin_user.add
