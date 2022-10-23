@@ -11,4 +11,9 @@ feature 'Create product', %q{
   given!(:hangar) { create(:hangar) }
 
   describe 'Admin user' do
-    before { admin_user.add
+    before { admin_user.add_role(:admin) }
+    scenario 'creates product' do
+      sign_in(admin_user)
+
+      click_new_product_link
+      fi
