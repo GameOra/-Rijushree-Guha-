@@ -24,4 +24,9 @@ feature 'Create product', %q{
       expect(page).to have_content 'Product name'
       expect(page).to have_content '1.11'
       expect(page).to have_content 'Ангар: 1'
-    en
+    end
+
+    scenario 'tries to create product with blank fields' do
+      sign_in(admin_user)
+
+      click_ne
