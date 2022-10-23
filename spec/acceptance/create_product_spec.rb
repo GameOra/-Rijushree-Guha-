@@ -18,4 +18,7 @@ feature 'Create product', %q{
       click_new_product_link
       fill_in 'product_name', with: 'Product name'
       fill_in 'product_wieght', with: '1.11'
-      select h
+      select hangar.number, from: 'product_hangar_id'
+      click_on 'Сохранить'
+
+      expect(page).to have_content 'Product 
