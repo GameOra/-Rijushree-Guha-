@@ -21,4 +21,7 @@ feature 'Create product', %q{
       select hangar.number, from: 'product_hangar_id'
       click_on 'Сохранить'
 
-      expect(page).to have_content 'Product 
+      expect(page).to have_content 'Product name'
+      expect(page).to have_content '1.11'
+      expect(page).to have_content 'Ангар: 1'
+    en
