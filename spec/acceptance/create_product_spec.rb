@@ -16,4 +16,6 @@ feature 'Create product', %q{
       sign_in(admin_user)
 
       click_new_product_link
-      fi
+      fill_in 'product_name', with: 'Product name'
+      fill_in 'product_wieght', with: '1.11'
+      select h
