@@ -29,4 +29,7 @@ feature 'Create product', %q{
     scenario 'tries to create product with blank fields' do
       sign_in(admin_user)
 
-      click_ne
+      click_new_product_link
+      click_on 'Сохранить'
+
+      expect(page).to have_content "Name can't be blank"
