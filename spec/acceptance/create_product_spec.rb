@@ -34,4 +34,10 @@ feature 'Create product', %q{
 
       expect(page).to have_content "Name can't be blank"
       expect(page).to have_content "Wieght can't be blank"
-      expect(page).to have_content "Hang
+      expect(page).to have_content "Hangar must exist"
+    end
+  end
+
+  describe 'Contractor user' do
+    before { contractor_user.add_role(:contractor) }
+    
