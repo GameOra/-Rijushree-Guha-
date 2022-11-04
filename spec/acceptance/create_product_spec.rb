@@ -40,4 +40,8 @@ feature 'Create product', %q{
 
   describe 'Contractor user' do
     before { contractor_user.add_role(:contractor) }
-    
+    scenario 'does not create product' do
+      sign_in(contractor_user)
+
+      visit products_path
+     
