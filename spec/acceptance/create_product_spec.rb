@@ -51,4 +51,7 @@ feature 'Create product', %q{
   describe 'Seller user' do
     before { seller_user.add_role(:seller) }
     scenario 'does not create product' do
-  
+      sign_in(seller_user)
+
+      visit products_path
+      expect(page).to_not have_content 'Добавить 
