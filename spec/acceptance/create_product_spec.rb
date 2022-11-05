@@ -44,4 +44,8 @@ feature 'Create product', %q{
       sign_in(contractor_user)
 
       visit products_path
-     
+      expect(page).to_not have_content 'Добавить номенклатуру'
+    end
+  end
+
+  describe 'Seller user'
