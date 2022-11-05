@@ -54,4 +54,9 @@ feature 'Create product', %q{
       sign_in(seller_user)
 
       visit products_path
-      expect(page).to_not have_content 'Добавить 
+      expect(page).to_not have_content 'Добавить номенклатуру'
+    end
+  end
+
+  scenario 'Unauthenticated user tries to create product' do
+    visit product
