@@ -48,4 +48,7 @@ feature 'Create product', %q{
     end
   end
 
-  describe 'Seller user'
+  describe 'Seller user' do
+    before { seller_user.add_role(:seller) }
+    scenario 'does not create product' do
+  
