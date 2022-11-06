@@ -59,4 +59,6 @@ feature 'Create product', %q{
   end
 
   scenario 'Unauthenticated user tries to create product' do
-    visit product
+    visit products_path
+    expect(page).to have_content 'You need to sign in or sign up before continuing'
+  en
