@@ -68,4 +68,8 @@ feature 'Create product', %q{
   def click_new_product_link
     visit products_path
 
-    within '.products' d
+    within '.products' do
+      click_on 'Добавить номенклатуру'
+    end
+  end
+end
