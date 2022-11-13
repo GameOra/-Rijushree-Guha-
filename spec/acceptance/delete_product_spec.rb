@@ -16,4 +16,10 @@ feature 'User deletes product', %q{
       visit product_path(product)
       click_on 'Удалить'
 
-      expect(page).to h
+      expect(page).to have_no_content product.name
+    end
+  end
+
+  describe 'Seller user' do
+    before { user.add_role(:seller) }
+  
