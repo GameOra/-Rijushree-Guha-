@@ -6,4 +6,8 @@ feature 'User deletes product', %q{
 
   given(:user) { create(:user) }
 
-  given(:product
+  given(:product) { create(:product) }
+
+  describe 'Admin user' do
+    before { user.add_role(:admin) }
+    scenario 'deletes product' do
