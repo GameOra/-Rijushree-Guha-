@@ -22,4 +22,8 @@ feature 'User deletes product', %q{
 
   describe 'Seller user' do
     before { user.add_role(:seller) }
-  
+    scenario 'does not delete product' do
+      sign_in(user)
+
+      visit product_path(product)
+      expect
