@@ -26,4 +26,9 @@ feature 'User deletes product', %q{
       sign_in(user)
 
       visit product_path(product)
-      expect
+      expect(page).to have_no_content 'Удалить'
+    end
+  end
+
+  describe 'Contractor user' do
+    before { user.add_role(:
