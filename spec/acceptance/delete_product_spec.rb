@@ -40,4 +40,9 @@ feature 'User deletes product', %q{
     end
   end
 
-  scenario 'Unauthenticated 
+  scenario 'Unauthenticated user tries to delete product' do
+    visit product_path(product)
+
+    expect(page).to have_no_content 'Удалить'
+  end
+end
