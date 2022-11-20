@@ -31,4 +31,8 @@ feature 'User deletes product', %q{
   end
 
   describe 'Contractor user' do
-    before { user.add_role(:
+    before { user.add_role(:contractor) }
+    scenario 'does not delete product' do
+      sign_in(user)
+
+      visit produc
