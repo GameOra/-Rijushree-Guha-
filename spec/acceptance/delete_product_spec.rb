@@ -35,4 +35,9 @@ feature 'User deletes product', %q{
     scenario 'does not delete product' do
       sign_in(user)
 
-      visit produc
+      visit product_path(product)
+      expect(page).to have_no_content 'Удалить'
+    end
+  end
+
+  scenario 'Unauthenticated 
