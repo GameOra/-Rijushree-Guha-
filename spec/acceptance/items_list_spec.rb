@@ -6,4 +6,7 @@ feature 'List items', %q{
 } do
     given(:user) { create(:user) }
     given(:products) { create_list(:product, 2) }
-    given!(:first_item) { create(:item, p
+    given!(:first_item) { create(:item, product: products.first) }
+    given!(:second_item) { create(:item, product: products.last) }
+
+    scenario 'Authenti
