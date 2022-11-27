@@ -13,4 +13,6 @@ feature 'List items', %q{
       sign_in(user)
       visit items_path
 
-      exp
+      expect(page).to have_content first_item.product.name
+      expect(page).to have_content first_item.quantity
+ 
