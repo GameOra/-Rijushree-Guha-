@@ -9,4 +9,8 @@ feature 'List items', %q{
     given!(:first_item) { create(:item, product: products.first) }
     given!(:second_item) { create(:item, product: products.last) }
 
-    scenario 'Authenti
+    scenario 'Authenticated user views list of items' do
+      sign_in(user)
+      visit items_path
+
+      exp
