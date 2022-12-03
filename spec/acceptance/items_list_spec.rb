@@ -16,4 +16,6 @@ feature 'List items', %q{
       expect(page).to have_content first_item.product.name
       expect(page).to have_content first_item.quantity
       expect(page).to have_content first_item.total_wieght
-      expect(page).to have_content se
+      expect(page).to have_content second_item.quantity
+      expect(page).to have_content second_item.total_wieght
+      expect(page).to have_content 
