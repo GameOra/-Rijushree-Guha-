@@ -18,4 +18,8 @@ feature 'List items', %q{
       expect(page).to have_content first_item.total_wieght
       expect(page).to have_content second_item.quantity
       expect(page).to have_content second_item.total_wieght
-      expect(page).to have_content 
+      expect(page).to have_content second_item.product.name
+
+    end
+
+    scenario 'Unauthenticated user tries to see list of items
