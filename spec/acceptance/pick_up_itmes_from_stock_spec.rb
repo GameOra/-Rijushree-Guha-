@@ -32,3 +32,15 @@ feature 'Pick up item', %q{
     before { user.add_role(:contractor) }
     scenario 'it decreases quantity of item' do
       sign_in(user)
+
+      visit item_path(item)
+
+      expect(page).to_not have_content 'Забрать товар со склада'
+    end
+  end
+
+  scenario 'Unauthenticated user tries to pick up item' do
+    visit item_path(item)
+    expect(page).to have_content 'You need to sign in or sign up before continuing'
+  end
+end
