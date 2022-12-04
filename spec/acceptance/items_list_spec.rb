@@ -22,4 +22,8 @@ feature 'List items', %q{
 
     end
 
-    scenario 'Unauthenticated user tries to see list of items
+    scenario 'Unauthenticated user tries to see list of items' do
+      visit items_path
+
+      expect(page).to_not have_content first_item.product.name
+      expect
