@@ -26,4 +26,6 @@ feature 'List items', %q{
       visit items_path
 
       expect(page).to_not have_content first_item.product.name
-      expect
+      expect(page).to_not have_content second_item.product.name
+    end
+end
