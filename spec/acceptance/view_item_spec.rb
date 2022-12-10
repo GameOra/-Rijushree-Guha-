@@ -8,4 +8,7 @@ feature 'View item', %q{
   given(:item) { create(:item, product: product, quantity: 3) }
 
   context 'Admin user' do
-  
+    before { user.add_role(:admin) }
+    scenario 'sees the item' do
+      sign_in(user)
+      visit i
