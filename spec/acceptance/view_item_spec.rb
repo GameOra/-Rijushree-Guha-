@@ -11,4 +11,8 @@ feature 'View item', %q{
     before { user.add_role(:admin) }
     scenario 'sees the item' do
       sign_in(user)
-      visit i
+      visit item_path(item)
+
+      within '.item' do
+        expect(page).to have_content 'MyString'
+      
