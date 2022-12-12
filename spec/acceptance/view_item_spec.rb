@@ -17,4 +17,6 @@ feature 'View item', %q{
         expect(page).to have_content 'MyString'
         expect(page).to have_content '9.99'
         expect(page).to have_content '3'
-        expect(page).to have
+        expect(page).to have_content 9.99*3
+        expect(page).to have_content item.product.hangar.number
+      en
