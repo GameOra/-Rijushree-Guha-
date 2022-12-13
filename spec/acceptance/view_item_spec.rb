@@ -19,4 +19,10 @@ feature 'View item', %q{
         expect(page).to have_content '3'
         expect(page).to have_content 9.99*3
         expect(page).to have_content item.product.hangar.number
-      en
+      end
+    end
+  end
+
+  context 'Seller user' do
+    before { user.add_role(:seller) }
+    scenario 'sees the it
