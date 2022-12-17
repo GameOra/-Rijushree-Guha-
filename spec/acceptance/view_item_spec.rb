@@ -25,4 +25,9 @@ feature 'View item', %q{
 
   context 'Seller user' do
     before { user.add_role(:seller) }
-    scenario 'sees the it
+    scenario 'sees the item' do
+      sign_in(user)
+      visit item_path(item)
+
+      within '.item' do
+        expect(pag
