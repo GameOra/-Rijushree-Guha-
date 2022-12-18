@@ -30,4 +30,6 @@ feature 'View item', %q{
       visit item_path(item)
 
       within '.item' do
-        expect(pag
+        expect(page).to have_content 'MyString'
+        expect(page).to have_content '9.99'
+        expect(page).to hav
