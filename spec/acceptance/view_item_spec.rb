@@ -32,4 +32,6 @@ feature 'View item', %q{
       within '.item' do
         expect(page).to have_content 'MyString'
         expect(page).to have_content '9.99'
-        expect(page).to hav
+        expect(page).to have_content '3'
+        expect(page).to have_content 9.99*3
+        expect(page).to have_content item.prod
