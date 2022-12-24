@@ -40,4 +40,9 @@ feature 'View item', %q{
   end
 
   context 'Contractor user' do
-    before { user.add_r
+    before { user.add_role(:contractor) }
+    scenario 'sees the item' do
+      sign_in(user)
+      visit item_path(item)
+
+      w
