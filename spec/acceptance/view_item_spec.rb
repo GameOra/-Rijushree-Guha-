@@ -50,4 +50,10 @@ feature 'View item', %q{
         expect(page).to have_content '9.99'
         expect(page).to have_content '3'
         expect(page).to have_content 9.99*3
-        expect(page).to 
+        expect(page).to have_content item.product.hangar.number
+      end
+    end
+  end
+
+  context 'Unauthenticated user' do
+    scenar
