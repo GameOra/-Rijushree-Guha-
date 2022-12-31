@@ -45,4 +45,6 @@ feature 'View item', %q{
       sign_in(user)
       visit item_path(item)
 
-      w
+      within '.item' do
+        expect(page).to have_content 'MyString'
+        expect(page).to have_conte
