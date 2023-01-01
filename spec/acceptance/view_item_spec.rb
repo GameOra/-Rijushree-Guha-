@@ -56,4 +56,8 @@ feature 'View item', %q{
   end
 
   context 'Unauthenticated user' do
-    scenar
+    scenario 'does not see the item' do
+      visit item_path(item)
+
+      expect(page).to_not have_content 'MyString'
+ 
