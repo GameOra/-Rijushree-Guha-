@@ -7,4 +7,9 @@ feature 'View product', %q{
   # given(:product) { create(:product_with_comments) }
   given(:product) { create(:product) }
 
-  context 'Aut
+  context 'Authenticated user' do
+    scenario 'sees the product' do
+      sign_in(user)
+      visit product_path(product)
+
+      wit
