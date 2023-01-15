@@ -12,4 +12,6 @@ feature 'View product', %q{
       sign_in(user)
       visit product_path(product)
 
-      wit
+      within '.product' do
+        expect(page).to have_content 'MyString'
+        expect(page).to have_content 
