@@ -20,4 +20,6 @@ feature 'View product', %q{
     end
   end
 
-  context 'Unau
+  context 'Unauthenticated user' do
+    scenario 'does not see the product' do
+      visit product_path(produ
