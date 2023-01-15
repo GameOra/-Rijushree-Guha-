@@ -14,4 +14,10 @@ feature 'View product', %q{
 
       within '.product' do
         expect(page).to have_content 'MyString'
-        expect(page).to have_content 
+        expect(page).to have_content '9.99'
+        expect(page).to have_content product.hangar.number
+      end
+    end
+  end
+
+  context 'Unau
