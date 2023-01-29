@@ -26,4 +26,7 @@ feature 'View product', %q{
 
       expect(page).to_not have_content 'MyString'
       expect(page).to_not have_content '9.99'
-      expect(page).to_not have_content "Ангар: #{product.hangar.numb
+      expect(page).to_not have_content "Ангар: #{product.hangar.number}"
+    end
+  end
+end
