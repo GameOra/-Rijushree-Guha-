@@ -22,4 +22,7 @@ feature 'View product', %q{
 
   context 'Unauthenticated user' do
     scenario 'does not see the product' do
-      visit product_path(produ
+      visit product_path(product)
+
+      expect(page).to_not have_content 'MyString'
+      expect(page).to_not have_cont
