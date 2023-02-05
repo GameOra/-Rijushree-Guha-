@@ -353,3 +353,93 @@ RSpec.describe ItemsController, type: :controller do
     context 'guest tries to decrease item quantity' do
       before {  get :subtract, params: { id: item }}
       it 'assigns item to @item' do
+        expect(assigns(:item)).to_not eq item
+      end
+
+      it 'renders new view' do
+        expect(response).to_not render_template :subtract
+      end
+    end
+  end
+
+  describe 'PATCH #deduct' do
+    let(:product) { create(:product) }
+
+    context 'admin user tries to decrease item quantity' do
+      sign_in_user
+      before { @user.add_role(:admin) }
+      context 'with valid attributes' do
+
+        it 'decreasesa item quantity' do
+          patch :deduct, params: { id: item, item: { product_id: item.product, quantity: '5' } }
+          item.reload
+          expect(item.quantity).to eq(5)
+        end
+
+        it 'redirects to show view' do
+          patch :deduct, params: { id: item, item: { product_id: item.product, quantity: '5' } }
+          expect(response).to redirect_to item_path(item)
+        end
+      end
+
+      context 'if item quantity - params 0 or less' do
+        let!(:item) { create(:item, quantity: 5, product: product) }
+        it 'does not change quantity' do
+          patch :deduct, params: { id: item, item: { product_id: item.product, quantity: '10' } }
+          expect(item.quantity).to eq(5)
+        end
+      end
+    end
+
+    context 'seller user tries to decrease item quantity' do
+      sign_in_user
+      before { @user.add_role(:seller) }
+      context 'with valid attributes' do
+
+        it 'decreasesa item quantity' do
+          patch :deduct, params: { id: item, item: { product_id: item.product, quantity: '5' } }
+          item.reload
+          expect(item.quantity).to eq(5)
+        end
+
+        it 'redirects to show view' do
+          patch :deduct, params: { id: item, item: { product_id: item.product, quantity: '5' } }
+          expect(response).to redirect_to item_path(item)
+        end
+      end
+
+      context 'if item quantity - params 0 or less' do
+        let!(:item) { create(:item, quantity: 5, product: product) }
+        it 'does not change quantity' do
+          patch :deduct, params: { id: item, item: { product_id: item.product, quantity: '10' } }
+          expect(item.quantity).to eq(5)
+        end
+      end
+    end
+
+    context 'contractoe tries to decrease item quantity' do
+      sign_in_user
+      before { @user.add_role(:contractor) }
+      context 'with valid attributes' do
+
+        it 'does not decrease items quantity' do
+          item
+          patch :deduct, params: { id: item.id, quantity: '5' }
+          expect(item.quantity).to eq(10)
+        end
+
+        it 'redirects to products path' do
+          patch :deduct, params: { id: item.id, quantity: '5' }
+          expect(response).to redirect_to products_path
+        end
+      end
+    end
+
+    context 'unauthenticated user tries to deduct item' do
+      it 'does not decrease items quantity' do
+        item
+        patch :deduct, params: { id: item.id, quantity: '5' }
+        expect(item.quantity).to eq(10)
+      end
+
+      it 'redirects to new session path' do
