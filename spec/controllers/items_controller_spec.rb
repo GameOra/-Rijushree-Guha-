@@ -256,3 +256,100 @@ RSpec.describe ItemsController, type: :controller do
         let!(:item) { create(:item, quantity: 5, product: product) }
         it 'does not create new one' do
           expect { post :create, params: { item: { quantity: '5' }
+            .merge(product_id: product) } }
+            .to_not change(Item, :count)
+        end
+
+        it 'increases quantity' do
+          post :create, params: { item: { quantity: '5' }.merge(product_id: product) }
+          expect(Item.last.quantity).to eq(10)
+        end
+      end
+    end
+
+    context 'seller user tries to create item' do
+      sign_in_user
+
+      before { @user.add_role(:seller) }
+      context 'with valid attributes' do
+
+        it 'does not create a new Item' do
+          item
+          expect { post :create, params: { item: attributes_for(:item)
+            .merge(product_id: product) } }
+            .to_not change(Item, :count)
+        end
+
+        it 'redirects to new session path' do
+          post :create, params: { item: attributes_for(:item)
+            .merge(product_id: product) }
+          expect(response).to redirect_to products_path
+        end
+      end
+    end
+
+    context 'unauthenticated user tries to create item' do
+      it 'does not create a new Item' do
+        item
+        expect { post :create, params: { item: attributes_for(:item)
+          .merge(product_id: product) } }
+          .to_not change(Item, :count)
+      end
+
+      it 'redirects to new session path' do
+        post :create, params: { item: attributes_for(:item)
+          .merge(product_id: product) }
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
+
+  describe 'GET #subtract' do
+    context 'admin tries to decrease item quantity' do
+      sign_in_user
+      before do
+        @user.add_role(:admin)
+        get :subtract, params: { id: item }
+      end
+      it 'assigns item to @item' do
+        expect(assigns(:item)).to eq item
+      end
+
+      it 'renders new view' do
+        expect(response).to render_template :subtract
+      end
+    end
+
+    context 'seller tries to decrease item quantity' do
+      sign_in_user
+      before do
+        @user.add_role(:seller)
+        get :subtract, params: { id: item }
+      end
+      it 'assigns item to @item' do
+        expect(assigns(:item)).to eq item
+      end
+
+      it 'renders new view' do
+        expect(response).to render_template :subtract
+      end
+    end
+
+    context 'contractor tries to decrease item quantity' do
+      sign_in_user
+      before do
+        @user.add_role(:contractor)
+        get :subtract, params: { id: item }
+      end
+      it 'assigns item to @item' do
+        expect(assigns(:item)).to eq item
+      end
+
+      it 'renders new view' do
+        expect(response).to redirect_to products_path
+      end
+    end
+
+    context 'guest tries to decrease item quantity' do
+      before {  get :subtract, params: { id: item }}
+      it 'assigns item to @item' do
