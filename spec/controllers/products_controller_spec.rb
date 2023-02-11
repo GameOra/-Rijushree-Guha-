@@ -296,3 +296,81 @@ RSpec.describe ProductsController, type: :controller do
       end
       it 'does not update product attributes' do
         product.reload
+        expect(product.name).to eq name
+        expect(product.wieght).to eq wieght
+      end
+
+      it 'redirects to new sesseion path' do
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+
+    context 'admin tries to delete product' do
+      sign_in_user
+      before do
+        @user.add_role(:admin)
+        product
+      end
+
+      it 'deletes product' do
+        expect { delete :destroy, params: { id: product } }
+          .to change(Product, :count).by(-1)
+      end
+
+      it 'redirects to index view' do
+        delete :destroy, params: { id: product }
+        expect(response).to redirect_to products_path
+      end
+    end
+
+    context 'seller tries to delete product' do
+      sign_in_user
+      before do
+        @user.add_role(:seller)
+        product
+      end
+      it 'does not deletes product' do
+        expect { delete :destroy, params: { id: product } }
+          .to_not change(Product, :count)
+      end
+
+      it 'redirects to new session path' do
+        delete :destroy, params: { id: product }
+        expect(response).to redirect_to products_path
+      end
+    end
+
+    context 'contractor tries to delete product' do
+      sign_in_user
+      before do
+        @user.add_role(:contractor)
+        product
+      end
+      it 'does not deletes product' do
+        expect { delete :destroy, params: { id: product } }
+          .to_not change(Product, :count)
+      end
+
+      it 'redirects to new session path' do
+        delete :destroy, params: { id: product }
+        expect(response).to redirect_to products_path
+      end
+    end
+
+    context 'unauthenticated user tries to delete product' do
+      it 'does not deletes product' do
+        product
+        expect { delete :destroy, params: { id: product } }
+          .to_not change(Product, :count)
+      end
+
+      it 'redirects to new session path' do
+        delete :destroy, params: { id: product }
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
+end
