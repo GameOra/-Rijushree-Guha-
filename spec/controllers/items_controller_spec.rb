@@ -443,3 +443,9 @@ RSpec.describe ItemsController, type: :controller do
       end
 
       it 'redirects to new session path' do
+        patch :deduct, params: { id: item.id, quantity: '5' }
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
+end
