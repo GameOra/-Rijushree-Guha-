@@ -1,2 +1,5 @@
 FactoryGirl.define do
-  f
+  factory :hangar do
+    number 1
+  end
+end
