@@ -193,3 +193,106 @@ RSpec.describe ProductsController, type: :controller do
       it 'redirects to new session path' do
         post :create, params: { product: attributes_for(:product)
           .merge(hangar_id: product.hangar) }
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
+
+  describe 'PATCH #update' do
+
+    context 'admin tries to update product' do
+      sign_in_user
+      before { @user.add_role(:admin) }
+
+      context 'with valid attributes' do
+        it 'assigns the requested product to @product' do
+          patch :update, params: { id: product,
+            product: attributes_for(:product) }
+          expect(assigns(:product)).to eq product
+        end
+
+        it 'change product attributes' do
+          patch :update, params: { id: product,
+            product: { name: 'new_name', wieght: '111' } }
+          product.reload
+          expect(product.name).to eq 'new_name'
+          expect(product.wieght).to eq 111
+        end
+
+        it 'redirects to updated @product' do
+          patch :update, params: { id: product,
+            product: attributes_for(:product) }
+          expect(response).to redirect_to product_path(product)
+        end
+      end
+
+      context 'with invalid attributes' do
+        let(:name) { product.name }
+        let(:wieght) { product.wieght }
+        before do
+          patch :update, params: { id: product,
+            product: { name: 'new_name', wieght: nil } }
+        end
+        it 'does not change @product attributes' do
+          product.reload
+          expect(product.name).to eq name
+          expect(product.wieght).to eq wieght
+        end
+
+        it 're-renders edit view' do
+          expect(response).to render_template :edit
+        end
+      end
+    end
+
+    context 'seller user tries to update product' do
+      let(:name) { product.name }
+      let(:wieght) { product.wieght }
+      sign_in_user
+
+      before do
+        @user.add_role(:seller)
+        patch :update, params: { id: product,
+          product: { name: 'new_name', body: '111' } }
+      end
+      it 'does not update product attributes' do
+        product.reload
+        expect(product.name).to eq name
+        expect(product.wieght).to eq wieght
+      end
+
+      it 'redirects to new sesseion path' do
+        expect(response).to redirect_to products_path
+      end
+    end
+
+    context 'contractor user tries to update product' do
+      let(:name) { product.name }
+      let(:wieght) { product.wieght }
+      sign_in_user
+
+      before do
+        @user.add_role(:contractor)
+        patch :update, params: { id: product,
+          product: { name: 'new_name', body: '111' } }
+      end
+      it 'does not update product attributes' do
+        product.reload
+        expect(product.name).to eq name
+        expect(product.wieght).to eq wieght
+      end
+
+      it 'redirects to new sesseion path' do
+        expect(response).to redirect_to products_path
+      end
+    end
+
+    context 'unauthenticated user tries to update product' do
+      let(:name) { product.name }
+      let(:wieght) { product.wieght }
+      before do
+        patch :update, params: { id: product,
+          product: { name: 'new_name', body: '111' } }
+      end
+      it 'does not update product attributes' do
+        product.reload
