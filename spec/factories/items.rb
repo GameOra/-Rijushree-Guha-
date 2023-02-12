@@ -5,4 +5,7 @@ FactoryGirl.define do
     quantity 1
   end
 
-  factory :invalid_item, class: 'It
+  factory :invalid_item, class: 'Item' do
+    quantity nil
+  end
+end
