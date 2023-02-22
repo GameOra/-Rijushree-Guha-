@@ -7,4 +7,9 @@ describe Ability do
     let(:user) { nil }
 
     it { should_not be_able_to :read, :all }
-    it { should_not be_able_to :mana
+    it { should_not be_able_to :manage, :all }
+  end
+
+  describe 'for admin' do
+    let(:user) { create(:user) }
+    before { 
