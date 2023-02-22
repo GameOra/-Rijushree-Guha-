@@ -12,4 +12,10 @@ describe Ability do
 
   describe 'for admin' do
     let(:user) { create(:user) }
-    before { 
+    before { user.add_role(:admin) }
+
+    it { should be_able_to :manage, :all }
+  end
+
+  describe 'for seller' do
+    let(:
