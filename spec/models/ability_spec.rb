@@ -21,4 +21,6 @@ describe Ability do
     let(:user) { create(:user) }
     before { user.add_role(:seller) }
 
-    it { should be_able_to :create, Transact
+    it { should be_able_to :create, Transaction }
+    it { should_not be_able_to :read, Transaction }
+    it { should_not be_able_to :update, 
