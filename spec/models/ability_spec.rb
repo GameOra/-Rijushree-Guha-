@@ -18,4 +18,7 @@ describe Ability do
   end
 
   describe 'for seller' do
-    let(:
+    let(:user) { create(:user) }
+    before { user.add_role(:seller) }
+
+    it { should be_able_to :create, Transact
