@@ -37,4 +37,6 @@ describe Ability do
     let(:user) { create(:user) }
     before { user.add_role(:contractor) }
 
-    it { should be_able_to :c
+    it { should be_able_to :create, Transaction }
+    it { should_not be_able_to :read, Transaction }
+    it { should_not be_abl
