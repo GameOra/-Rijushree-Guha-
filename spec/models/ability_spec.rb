@@ -30,4 +30,8 @@ describe Ability do
     it { should be_able_to :deduct, Item }
     it { should_not be_able_to :manage, Item }
     it { should be_able_to :read, Product }
-    it { shoul
+    it { should_not be_able_to :manage, Product }
+  end
+
+  describe 'for contractor' do
+    l
