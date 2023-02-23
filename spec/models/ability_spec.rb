@@ -23,4 +23,6 @@ describe Ability do
 
     it { should be_able_to :create, Transaction }
     it { should_not be_able_to :read, Transaction }
-    it { should_not be_able_to :update, 
+    it { should_not be_able_to :update, Transaction }
+    it { should_not be_able_to :destroy, Transaction }
+    it { should be_able_to :rea
