@@ -28,4 +28,6 @@ describe Ability do
     it { should be_able_to :read, Item }
     it { should be_able_to :subtract, Item }
     it { should be_able_to :deduct, Item }
-    
+    it { should_not be_able_to :manage, Item }
+    it { should be_able_to :read, Product }
+    it { shoul
