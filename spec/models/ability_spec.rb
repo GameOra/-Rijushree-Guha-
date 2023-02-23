@@ -34,4 +34,7 @@ describe Ability do
   end
 
   describe 'for contractor' do
-    l
+    let(:user) { create(:user) }
+    before { user.add_role(:contractor) }
+
+    it { should be_able_to :c
