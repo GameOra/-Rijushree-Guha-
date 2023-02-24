@@ -45,4 +45,6 @@ describe Ability do
     it { should be_able_to :create, Item }
     it { should_not be_able_to :subtract, Item }
     it { should_not be_able_to :deduct, Item }
-    it { should_n
+    it { should_not be_able_to :destoy, Item }
+    it { should_not be_able_to :update, Item }
+    it { should be_
