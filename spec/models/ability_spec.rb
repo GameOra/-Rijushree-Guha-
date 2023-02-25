@@ -47,4 +47,7 @@ describe Ability do
     it { should_not be_able_to :deduct, Item }
     it { should_not be_able_to :destoy, Item }
     it { should_not be_able_to :update, Item }
-    it { should be_
+    it { should be_able_to :read, Product }
+    it { should_not be_able_to :manage, Product }
+  end
+end
