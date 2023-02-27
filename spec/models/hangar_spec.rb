@@ -5,4 +5,6 @@ RSpec.describe Hangar, type: :model do
   it { should validate_presence_of :number }
 
   let(:hangar) { create(:hangar) }
-  let(:pro
+  let(:product) { create(:product, hangar: hangar) }
+  let!(:item1) { create(:item, product: product) }
+  let!(:item
