@@ -2,4 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Hangar, type: :model do
   it { should have_many(:products) }
-  it {
+  it { should validate_presence_of :number }
+
+  let(:hangar) { create(:hangar) }
+  let(:pro
