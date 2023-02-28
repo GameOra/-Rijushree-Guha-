@@ -7,4 +7,7 @@ RSpec.describe Hangar, type: :model do
   let(:hangar) { create(:hangar) }
   let(:product) { create(:product, hangar: hangar) }
   let!(:item1) { create(:item, product: product) }
-  let!(:item
+  let!(:item2) { create(:item, product: product) }
+
+  describe '#sum_wieght' do
+    it 'calculate sum of items wi
