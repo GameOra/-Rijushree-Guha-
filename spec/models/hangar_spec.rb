@@ -14,3 +14,4 @@ RSpec.describe Hangar, type: :model do
       expect(hangar.sum_wieght).to eq(item1.total_wieght + item2.total_wieght)
     end
   end
+end
