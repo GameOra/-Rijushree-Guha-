@@ -10,4 +10,7 @@ RSpec.describe Hangar, type: :model do
   let!(:item2) { create(:item, product: product) }
 
   describe '#sum_wieght' do
-    it 'calculate sum of items wi
+    it 'calculate sum of items wieght' do
+      expect(hangar.sum_wieght).to eq(item1.total_wieght + item2.total_wieght)
+    end
+  end
