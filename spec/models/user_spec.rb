@@ -12,4 +12,8 @@ RSpec.describe User, type: :model do
     before do
       user.add_role(:seller)
       user.add_role(:contractor)
-      user.set_role(Role.find_by(name: :con
+      user.set_role(Role.find_by(name: :contractor))
+    end
+
+    it 'set new role' do
+      expect(user.has_role?(:contractor)).to
