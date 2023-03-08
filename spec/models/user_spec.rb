@@ -20,4 +20,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'remove old role' do
-      expect(user.has_role?(:seller)).to be_fals
+      expect(user.has_role?(:seller)).to be_falsy
+    end
+  end
+end
