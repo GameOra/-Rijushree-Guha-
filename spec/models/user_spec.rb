@@ -16,4 +16,8 @@ RSpec.describe User, type: :model do
     end
 
     it 'set new role' do
-      expect(user.has_role?(:contractor)).to
+      expect(user.has_role?(:contractor)).to be_truthy
+    end
+
+    it 'remove old role' do
+      expect(user.has_role?(:seller)).to be_fals
