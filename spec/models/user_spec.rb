@@ -10,4 +10,6 @@ RSpec.describe User, type: :model do
 
   describe '#set_role' do
     before do
-      user.add_role(:sell
+      user.add_role(:seller)
+      user.add_role(:contractor)
+      user.set_role(Role.find_by(name: :con
