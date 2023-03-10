@@ -12,4 +12,5 @@ require 'cancan/matchers'
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
 # in _spec.rb will both be required and run as specs, causing the specs to be
-# run twice. It is 
+# run twice. It is recommended that you do not name files matching this glob to
+# end with _spec.rb. You can configure th
