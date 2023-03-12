@@ -21,4 +21,6 @@ require 'cancan/matchers'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-Dir[Rails.root.join('spec/su
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+# Checks for pending migration and applies
