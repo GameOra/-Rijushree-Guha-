@@ -34,3 +34,6 @@ RSpec.configure do |config|
   config.include AcceptanceHelper, type: :feature
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+  # If you're not using ActiveRecord, or you'd prefer not to run each of your
+  # examples within 
