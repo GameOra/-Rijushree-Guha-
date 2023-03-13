@@ -57,4 +57,8 @@ RSpec.configure do |config|
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
-  # arbitra
+  # arbitrary gems may also be filtered via:
+  # config.filter_gems_from_backtrace("gem name")
+end
+
+Shoulda::Matchers.configure
