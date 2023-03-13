@@ -48,3 +48,7 @@ RSpec.configure do |config|
   # explicitly tag your specs with their type, e.g.:
   #
   #     RSpec.describe UsersController, :type => :controller do
+  #       # ...
+  #     end
+  #
+  # The different available types are documented in the features, such as i
