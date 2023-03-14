@@ -5,4 +5,5 @@
 # files.
 #
 # Given that it is always loaded, you are encouraged to keep this file as
-# 
+# light-weight as possible. Requiring heavyweight dependencies from this file
+# will add 
