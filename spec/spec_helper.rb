@@ -7,4 +7,5 @@
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file
 # will add to the boot time of your test suite on EVERY test run, even for an
-# individual file that may not nee
+# individual file that may not need all of that loaded. Instead, consider making
+# a separate helper file that requires the addi
