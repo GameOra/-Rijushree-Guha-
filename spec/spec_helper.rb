@@ -55,4 +55,5 @@ RSpec.configure do |config|
   config.filter_run_when_matching :focus
 
   # Allows RSpec to persist some state between runs in order to support
- 
+  # the `--only-failures` and `--next-failure` CLI options. We recommend
+  # you configure your
