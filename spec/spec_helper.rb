@@ -52,4 +52,7 @@ RSpec.configure do |config|
   # is tagged with `:focus`, all examples get run. RSpec also provides
   # aliases for `it`, `describe`, and `context` that include `:focus`
   # metadata: `fit`, `fdescribe` and `fcontext`, respectively.
-  co
+  config.filter_run_when_matching :focus
+
+  # Allows RSpec to persist some state between runs in order to support
+ 
