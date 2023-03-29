@@ -78,4 +78,7 @@ RSpec.configure do |config|
 
   # Print the 10 slowest examples and example groups at the
   # end of the spec run, to help surface which specs are running
-  # partic
+  # particularly slow.
+  config.profile_examples = 10
+
+  # Run specs in random order to surface order dependencies. 
